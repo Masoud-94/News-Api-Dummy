@@ -1,0 +1,29 @@
+.HeaderNewsComponentv2 {
+  margin-right: 10px;
+  &:not(:last-child) {
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+  }
+  &__content {
+    font-size: 14px;
+
+    .time {
+      font-size: 12px;
+    }
+    &--link {
+      color: black;
+      text-decoration: none;
+      &:hover {
+        color: tomato;
+        text-decoration: none;
+      }
+    }
+  }
+  img {
+    width: 100%;
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,39 @@
+.navbar-brand {
+  line-height: 41px !important;
+  // padding: 0px 5px !important;
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+    text-decoration: none;
+  }
+  &--1 {
+    padding: 12px 0 12px 8px;
+    background-color: #22272c;
+    color: white;
+  }
+
+  &--2 {
+    font-weight: bold;
+    padding: 8px 8px 8px 0;
+    background-color: white;
+    color: black;
+  }
+}
+
+.navigation-bar {
+  width: 100%;
+  line-height: 36px;
+  .nav-link {
+    color: black !important;
+    font-weight: bold;
+    &.active {
+      background-color: #2b3238;
+      color: white !important;
+    }
+  }
+  .nav-link:hover {
+    background-color: #2b3238;
+    color: white !important;
+  }
+}

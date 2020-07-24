@@ -1,0 +1,33 @@
+.mid-section__nav {
+  font-family: "Montserrat", Sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-style: normal;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+
+  width: 97%;
+  border-bottom: 1px solid #e6e6e6;
+
+  &--brand {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #558dd9;
+    margin-bottom: 20px;
+  }
+
+  .nav-item .nav-link {
+    line-height: 22px;
+    padding: 0px;
+    margin: 0 0 0 25px;
+    color: black;
+    &:hover {
+      color: tomato;
+    }
+    &.active {
+      color: tomato;
+    }
+  }
+}

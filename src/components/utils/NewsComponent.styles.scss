@@ -1,0 +1,25 @@
+.HeaderNewsComponent {
+  background-size: cover;
+  // margin: 0px 1px 1px 0;
+  &__content {
+    position: absolute;
+    bottom: 0;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  &:hover {
+    color: white;
+    cursor: pointer;
+    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(100%); /* FF 35+ */
+  }
+}
+.headline:last-child {
+  margin-right: 0px !important;
+}
