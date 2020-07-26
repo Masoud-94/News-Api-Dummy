@@ -4,15 +4,12 @@ import Header from "./components/Header/Header";
 import MainContent from "./components/content/MainContent";
 import Footer from "./components/Footer/Footer";
 import DetailPage from "./components/Pages/DetailPage";
-
+import AboutMe from "./components/Pages/AboutMe";
 import AdvancedSearch from "./components/Pages/AdvancedSearch";
 import LatestNewsUs from "./components/Pages/LatestNewsUs";
 import IntroNav from "./components/utils/IntroNav";
-
 import "./custom.scss";
-
 import "./App.scss";
-import AboutMe from "./components/Pages/AboutMe";
 
 function App() {
   return (
@@ -23,7 +20,7 @@ function App() {
           <Route
             exact
             path="/"
-            render={props => (
+            render={(props) => (
               <div>
                 <Header {...props} />
                 <MainContent />
@@ -33,7 +30,7 @@ function App() {
           <Route
             exact
             path="/detail/latestnewsUs"
-            render={props => (
+            render={(props) => (
               <DetailPage {...props}>
                 <LatestNewsUs />
               </DetailPage>
@@ -43,7 +40,7 @@ function App() {
           <Route
             exact
             path="/detail/AdvancedSearch"
-            render={props => (
+            render={(props) => (
               <DetailPage {...props}>
                 <AdvancedSearch />
               </DetailPage>
@@ -52,14 +49,13 @@ function App() {
           <Route
             exact
             path="/detail/aboutme"
-            render={props => (
+            render={(props) => (
               <DetailPage {...props}>
                 <AboutMe />
               </DetailPage>
             )}
           />
         </Switch>
-
         <Footer />
       </div>
     </Router>

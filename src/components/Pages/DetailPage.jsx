@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import SideBar from "../utils/SideBar";
-
-import "./DetailPage.styles.scss";
 import NavigationBar from "../NavigationBar/NavigationBar";
+import "./DetailPage.styles.scss";
+
 class DetailPage extends Component {
   state = {};
   render() {

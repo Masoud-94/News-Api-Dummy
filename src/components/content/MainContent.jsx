@@ -1,30 +1,29 @@
 import React, { Component } from "react";
-import "./MainContent.styles.scss";
+import Axios from "axios";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import MidSection from "./MidSection";
 import SideBar from "../utils/SideBar";
-import Axios from "axios";
+
 class MainContent extends Component {
   state = {
     midsectionCategory: "business",
     midsectionNews: [],
-    midSectionFirstNews: {}
+    midSectionFirstNews: {},
   };
-
-  fetchNewsMidSection = async category => {
+  fetchNewsMidSection = async (category) => {
     const response = await Axios.get(
       `http://newsapi.org/v2/top-headlines?category=${category}&country=us&pageSize=4&apiKey=b7960abe6a064a35b8aab97636f707bf`
     );
     this.setState({ midsectionNews: response.data.articles.splice(0, 4) });
     this.setState({ midSectionFirstNews: this.state.midsectionNews.shift() });
   };
-  handelCategoryChange = e => {
+  handelCategoryChange = (e) => {
     this.setState({ midsectionCategory: e });
     this.fetchNewsMidSection(e);
   };
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventdefault();
   };
   componentDidMount() {

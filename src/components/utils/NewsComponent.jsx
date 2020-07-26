@@ -2,7 +2,6 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Moment from "react-moment";
 import "moment-timezone";
-
 import "./NewsComponent.styles.scss";
 
 const NewsComponent = ({
@@ -14,7 +13,7 @@ const NewsComponent = ({
   publishedAt,
   sizesm,
   componentHeight,
-  customClass
+  customClass,
 }) => {
   return (
     <Col
@@ -22,7 +21,7 @@ const NewsComponent = ({
       className={`HeaderNewsComponent ${customClass}`}
       style={{
         backgroundImage: `url(${urlToImage})`,
-        height: componentHeight
+        height: componentHeight,
       }}
     >
       <h5>

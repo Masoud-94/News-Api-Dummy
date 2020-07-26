@@ -1,9 +1,9 @@
 import React from "react";
+import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { MdEmail } from "react-icons/md";
 import "./SideBar.styles.scss";
-import Row from "react-bootstrap/Row";
 
 const SideBar = ({ onSubmit }) => {
   return (

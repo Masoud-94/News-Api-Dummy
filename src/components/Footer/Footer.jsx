@@ -10,7 +10,7 @@ const Footer = () => {
           <Col sm={4} className={"text-white"}>
             <h4>About</h4>
             <p>
-              Hi ! my name is TripleM. I'm front end developer and this is my
+              Hi! my name is Masoud. I'm Front-End developer and this is my
               dummy news website.
             </p>
           </Col>

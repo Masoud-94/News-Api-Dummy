@@ -1,15 +1,13 @@
 import React from "react";
-
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import { Row } from "react-bootstrap";
-
 import "./NavigationBar.styles.scss";
 
 const NavigationBar = ({ ...otherProps }) => {
-  const handleSelect = selectedKey => {
+  const handleSelect = (selectedKey) => {
     otherProps.history.push(selectedKey);
     console.log(otherProps);
   };

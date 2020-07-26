@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import HeaderNews from "./HeaderNews";
-
-import "./Header.styles.scss";
 import Axios from "axios";
+import HeaderNews from "./HeaderNews";
 import NavigationBar from "../NavigationBar/NavigationBar";
+import "./Header.styles.scss";
 
 class Header extends Component {
   state = {
     headlines: [],
     headlines2: [],
-    firstHeadline: {}
+    firstHeadline: {},
   };
 
   async componentDidMount() {

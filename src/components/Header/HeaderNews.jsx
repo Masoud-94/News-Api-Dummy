@@ -2,8 +2,8 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import "./HeaderNews.styles.scss";
 import NewsComponent from "../utils/NewsComponent";
+import "./HeaderNews.styles.scss";
 
 const HeaderNews = ({ firstHeadline, headlines, headlines2 }) => {
   return (

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import Axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
+import NewsComponentV2 from "../utils/NewsComponentV2";
 import "./ListCreator.styles.scss";
 
-import Axios from "axios";
-import NewsComponentV2 from "../utils/NewsComponentV2";
 class ListCreator extends Component {
   state = {
     categories: [
@@ -15,7 +15,7 @@ class ListCreator extends Component {
       "health",
       "science",
       "sports",
-      "technology"
+      "technology",
     ],
     languages: [
       "ar",
@@ -31,7 +31,7 @@ class ListCreator extends Component {
       "ru",
       "se",
       "ud",
-      "zh"
+      "zh",
     ],
     countries: [
       "ae",
@@ -87,30 +87,30 @@ class ListCreator extends Component {
       "ua",
       "us",
       "ve",
-      "za"
+      "za",
     ],
     category: [],
     language: [],
     country: [],
-    customNews: []
+    customNews: [],
   };
   makeQuery = () => {
     const { language, country, category } = this.state;
 
     return `language=${language}&country=${country}&category=${category}`;
   };
-  fetchData = async query => {
+  fetchData = async (query) => {
     const response = await Axios.get(
       `http://newsapi.org/v2/sources?${query}&apiKey=b7960abe6a064a35b8aab97636f707bf`
     );
     console.log(response.data.sources);
     this.setState({ customNews: response.data.sources });
   };
-  handleChange = e => {
+  handleChange = (e) => {
     const { name, id } = e.target;
     this.setState({ [name]: id });
   };
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.fetchData(this.makeQuery());
   };
@@ -187,7 +187,7 @@ class ListCreator extends Component {
                 urlToImage,
                 publishedAt,
                 sizesm,
-                componentHeight
+                componentHeight,
               }) => (
                 <NewsComponentV2
                   url={url}

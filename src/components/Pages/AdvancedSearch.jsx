@@ -3,13 +3,11 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 import Col from "react-bootstrap/Col";
-import "./AdvancedSearch.styles.scss";
 import { MdClose } from "react-icons/md";
-import NewsComponentV2 from "../utils/NewsComponentV2";
-import DatePicker from "react-datepicker";
-
-import "react-datepicker/dist/react-datepicker.css";
 import Axios from "axios";
+import DatePicker from "react-datepicker";
+import NewsComponentV2 from "../utils/NewsComponentV2";
+import "react-datepicker/dist/react-datepicker.css";
 
 class AdvancedSearch extends Component {
   state = {
@@ -23,16 +21,16 @@ class AdvancedSearch extends Component {
     tempIncludeDomain: "",
     tempExcludeDomain: "",
 
-    fetchedNews: []
+    fetchedNews: [],
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
   toggleChange = () => {
     this.setState({
-      isTitleOnly: !this.state.isTitleOnly
+      isTitleOnly: !this.state.isTitleOnly,
     });
   };
   handleInclude = () => {
@@ -55,17 +53,17 @@ class AdvancedSearch extends Component {
   };
   handleRemoveFromState = (domain, isInclude) => {
     if (isInclude) {
-      const domains = this.state.includedDomains.filter(d => d !== domain);
+      const domains = this.state.includedDomains.filter((d) => d !== domain);
       this.setState({ includedDomains: domains });
     } else {
-      const domains = this.state.excludedDomains.filter(d => d !== domain);
+      const domains = this.state.excludedDomains.filter((d) => d !== domain);
       this.setState({ excludedDomains: domains });
     }
   };
-  handleDateFrom = date => {
+  handleDateFrom = (date) => {
     this.setState({ dateFrom: date });
   };
-  handleDateTo = date => {
+  handleDateTo = (date) => {
     this.setState({ dateTo: date });
   };
   createAddress = () => {
@@ -75,19 +73,19 @@ class AdvancedSearch extends Component {
       includedDomains,
       excludedDomains,
       dateFrom,
-      dateTo
+      dateTo,
     } = this.state;
 
     return `https://newsapi.org/v2/everything?${
       isTitleOnly ? "qInTitle" : "q"
     }=${qTitle}&domains=${includedDomains.join()}&excludeDomains=${excludedDomains.join()}&pageSize=5&apiKey=b7960abe6a064a35b8aab97636f707bf`;
   };
-  fetchData = async address => {
+  fetchData = async (address) => {
     const response = await Axios.get(address);
     console.log(response.data.articles);
     this.setState({ fetchedNews: response.data.articles });
   };
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
     this.fetchData(this.createAddress());
     console.log(this.createAddress());
@@ -246,7 +244,7 @@ class AdvancedSearch extends Component {
                 urlToImage,
                 publishedAt,
                 sizesm,
-                componentHeight
+                componentHeight,
               },
               index
             ) => (
