@@ -15,7 +15,7 @@ const MidSection = ({ newsList, category, firstNews }) => {
             Categories
           </span>
           <Nav.Item>
-            <Nav.Link className={"align-middle"} eventKey="business">
+            <Nav.Link className="align-middle" eventKey="business">
               Business
             </Nav.Link>
           </Nav.Item>
